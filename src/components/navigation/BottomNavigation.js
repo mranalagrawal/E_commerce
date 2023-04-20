@@ -15,14 +15,14 @@ import{createDrawerNavigator} from '@react-navigation/drawer'
 
 
 
-// function MyDrawer() {
-// const Drawer = createDrawerNavigator()
-//     return (
-//       <Drawer.Navigator>
-//    <Drawer.Screen name="Home" component={Home} />
-//       </Drawer.Navigator>
-//     );
-//   }
+function MyDrawer() {
+const Drawer = createDrawerNavigator()
+    return (
+      <Drawer.Navigator>
+   <Drawer.Screen name="Home" component={Home} />
+      </Drawer.Navigator>
+    );
+  }
 
 const BottomTab = () => {
 
@@ -63,7 +63,7 @@ const BottomTabs = createBottomTabNavigator()
       return <Icon name={iconName} size={size} color={color} />;
     },
   })}> 
-    <BottomTabs.Screen name='Home' component={Home} />
+    <BottomTabs.Screen name='Home' component={MyDrawer} />
     <BottomTabs.Screen name='Favourite' component={Favourite} />
     <BottomTabs.Screen name='Notification' component={Notification} />
     <BottomTabs.Screen name='Profile' component={Profile} />

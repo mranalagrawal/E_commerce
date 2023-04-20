@@ -42,13 +42,17 @@ const Home = () => {
      </View>
      <View style={styles.secondCard}>
       <Text style={styles.categoryText}>Categories</Text>
-      <FlatList data={MOCKDATA} horizontal={true} keyExtractor={item=>item.id} renderItem={(e)=>{
+      <FlatList data={MOCKDATA} horizontal={true} keyExtractor={item=>item.id} renderItem={({item})=>{
         return(
-          <View>
-            <Text style={{color:"black"}}>{e.name}</Text>
-          </View>
+          <ScrollView style={styles.Categorylist}>
+     <Text style={styles.category}>{item.name}</Text>
+          </ScrollView>
         )
       }} />
+     </View>
+
+     <View style={styles.product}>
+      <Text style={styles.productText}>New arrivals</Text>
      </View>
      
     </SafeAreaView>
@@ -120,5 +124,40 @@ const styles = StyleSheet.create({
     bottom:41,
     right:40,
     opacity:0.7
+  },
+  secondCard:{
+    marginTop:15,
+  },
+  categoryText:{
+    fontSize:25,
+    fontFamily:"Montserrat-Bolds",
+    color:COLORS.TEXT,
+    marginLeft:45,
+  },
+  Categorylist:{
+    borderColor:"#f2f3f4",
+    borderWidth:1,
+    borderRadius:15,
+    padding:5,
+    paddingHorizontal:15,
+    backgroundColor:COLORS.CARDBACKGROUND,
+    marginHorizontal:15,
+ 
+    marginTop:15
+  },category:{
+    fontSize:20,
+    color:COLORS.TEXT,
+    fontFamily:"Montserrat-Regular",
+  },
+  product:{
+    marginTop:15,
+  },
+  productText:{
+    color:COLORS.TEXT,
+    fontFamily:"Montserrat-Regular",
+    fontSize:20,
+    fontWeight:"700",
+    marginLeft:45,
+   
   }
 })
